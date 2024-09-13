@@ -1,0 +1,48 @@
+services:
+  react-app:
+    build:
+      context: ./react-microservice-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+
+  service1:
+    build:
+      context: ./service1
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - my-network
+
+  service2:
+    build:
+      context: ./service2
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    networks:
+      - my-network
+
+  service3:
+    build:
+      context: ./service3
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    networks:
+      - my-network
+
+  service4:
+    build:
+      context: ./service4
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    networks:
+      - my-network
+
+networks:
+  my-network:
